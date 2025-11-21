@@ -21,28 +21,28 @@ const Team = () => {
       email: 'nadeemahmad2703@gmail.com'
     },
     {
-      name: 'Iman Fatima',
+      name: 'Bisam Ahmad',
       role: 'Probability & Distribution Specialist',
       specialty: 'Random Variables & Statistical Inference',
       initials: 'IF',
       focus: 'PMF/PDF Analysis, Moment Calculations, Distribution Fitting',
       achievements: ['CLO 2 & 3 Lead Author', 'Identified Key Distributions', 'Built SLA Compliance Models'],
       skills: ['Statistical Modeling', 'Hypothesis Testing', 'R', 'Data Visualization'],
-      github: 'https://github.com/ImanFatima3715',
+      github: 'https://github.com/Bisam-27',
       linkedin: '#',
-      email: 'f223715@cfd.nu.edu.pk'
+      email: 'f223723@cfd.nu.edu.pk'
     },
     {
-      name: 'Bisam Ahmad',
+      name: 'Iman Fatima',
       role: 'Time Series & Autocorrelation Analyst',
       specialty: 'Seasonality Detection & Forecasting',
       initials: 'BA',
       focus: 'ACF Analysis, Shift Patterns, Order Rate Modeling',
       achievements: ['Discovered Night Shift Delay Root Cause', 'CLO 4 Framework Designer', 'Peak Hour Prediction Models'],
       skills: ['Time Series Analysis', 'ACF/PACF', 'Seasonality', 'Python Pandas'],
-      github: 'https://github.com/Bisam-27',
+      github: 'https://github.com/ImanFatima3715',
       linkedin: '#',
-      email: 'f223623@cfd.nu.edu.pk'
+      email: 'f223715@cfd.nu.edu.pk'
     },
     {
       name: 'Hamdan Ahmad',
