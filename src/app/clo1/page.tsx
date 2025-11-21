@@ -179,18 +179,18 @@ export default function CLO1Page() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1929]/95 backdrop-blur-lg border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition">
+          <a href="/" className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Home</span>
-          </button>
+          </a>
           <div className="flex items-center gap-3 px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full">
             <Package className="w-4 h-4 text-orange-400" />
             <span className="text-orange-400 font-bold">CLO 1</span>
           </div>
-          <button className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition">
+          <a href="/clo2" className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition">
             <span className="text-sm">CLO 2</span>
             <ChevronRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -258,8 +258,11 @@ export default function CLO1Page() {
 
               <Card>
                 <h3 className="text-lg font-bold text-blue-400 mb-3">Addition Principle</h3>
-                <MathDisplay block>m + n ways (mutually exclusive)</MathDisplay>
+                <MathDisplay block>m + n " ways" (mutually exclusive)</MathDisplay>
                 <p className="text-gray-300 text-center">Method A <span className="text-orange-400">OR</span> Method B</p>
+                <p className="text-xs text-gray-400 text-center mt-3">
+                  If a warehouse task can be completed by method A in <strong>m</strong> ways or by method B in <strong>n</strong> ways, and these methods are mutually exclusive, the task can be completed in <strong>m+n</strong> ways.
+                </p>
               </Card>
             </section>
 
@@ -271,15 +274,28 @@ export default function CLO1Page() {
               </div>
 
               <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/30">
-                <h3 className="text-lg font-bold text-purple-400 mb-3">Basic Permutation</h3>
+                <h3 className="text-lg font-bold text-purple-400 mb-3">Basic Permutation Formula</h3>
                 <MathDisplay block>P(n,r) = n! / (n-r)!</MathDisplay>
-                <p className="text-sm text-gray-400 text-center mb-4">Picking sequence optimization</p>
+                <p className="text-sm text-gray-400 text-center mb-4">Order matters - sequence affects travel time</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/30">
+                <h3 className="text-lg font-bold text-white mb-3">Question: Picking Sequence Optimization</h3>
+                <p className="text-gray-300 mb-4">
+                  A picker must retrieve <strong>5 different items</strong> from distinct locations in a warehouse aisle. The sequence matters because it affects travel time.
+                </p>
+                <p className="text-sm text-orange-400 font-bold mb-4">
+                  How many possible picking sequences exist?
+                </p>
                 
-                <Input label="Number of Items" value={perm.items} onChange={(v) => setPerm({items: v})} max={10} />
-                
-                <div className="mt-4 p-4 bg-black/40 rounded-xl">
-                  <MathDisplay block>P({perm.items},{perm.items}) = {perm.items}! = {pickingSeq}</MathDisplay>
-                  <p className="text-center text-2xl font-bold text-white mt-2">{pickingSeq.toLocaleString()} sequences</p>
+                <div className="p-4 bg-black/40 rounded-xl mb-4">
+                  <h4 className="text-sm font-bold text-gray-300 mb-2">Solution:</h4>
+                  <Input label="Number of Items" value={perm.items} onChange={(v) => setPerm({items: v})} max={10} />
+                </div>
+
+                <div className="p-4 bg-black/40 rounded-xl">
+                  <MathDisplay block>P({perm.items},{perm.items}) = {perm.items}! = {pickingSeq.toLocaleString()}</MathDisplay>
+                  <p className="text-center text-2xl font-bold text-orange-400 mt-3">{pickingSeq.toLocaleString()} sequences</p>
                   <p className="text-xs text-gray-400 text-center mt-2">Travel time varies by sequence</p>
                 </div>
               </Card>
@@ -290,18 +306,32 @@ export default function CLO1Page() {
               <Card className="bg-gradient-to-br from-pink-500/10 to-red-500/10 border-pink-500/30">
                 <h3 className="text-lg font-bold text-pink-400 mb-3">Permutations with Repetition</h3>
                 <MathDisplay block>n! / (n₁! · n₂! · n₃!)</MathDisplay>
-                <p className="text-sm text-gray-400 text-center mb-4">10 orders: electronics/clothing/home goods</p>
-                
-                <div className="grid grid-cols-4 gap-3 mb-4">
-                  <PermRepInput label="Total" value={permRep.total} field="total" max={20} />
-                  <PermRepInput label="Type 1" value={permRep.type1} field="type1" max={permRep.total} />
-                  <PermRepInput label="Type 2" value={permRep.type2} field="type2" max={permRep.total} />
-                  <PermRepInput label="Type 3" value={permRep.type3} field="type3" max={permRep.total} />
+                <p className="text-sm text-gray-400 text-center mb-4">When items of same type are indistinguishable</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-pink-500/10 to-red-500/10 border-pink-500/30">
+                <h3 className="text-lg font-bold text-white mb-3">Question: Packing Station Sequences</h3>
+                <p className="text-gray-300 mb-4">
+                  A packing station has <strong>10 orders</strong>: 4 electronics, 3 clothing, 3 home goods.
+                </p>
+                <p className="text-sm text-orange-400 font-bold mb-4">
+                  How many distinct packing sequences are possible?
+                </p>
+
+                <div className="p-4 bg-black/40 rounded-xl mb-4">
+                  <h4 className="text-sm font-bold text-gray-300 mb-3">Solution: Adjust the values</h4>
+                  <div className="grid grid-cols-4 gap-3">
+                    <PermRepInput label="Total" value={permRep.total} field="total" max={20} />
+                    <PermRepInput label="Type 1 (Electronics)" value={permRep.type1} field="type1" max={permRep.total} />
+                    <PermRepInput label="Type 2 (Clothing)" value={permRep.type2} field="type2" max={permRep.total} />
+                    <PermRepInput label="Type 3 (Home)" value={permRep.type3} field="type3" max={permRep.total} />
+                  </div>
                 </div>
 
                 <div className="p-4 bg-black/40 rounded-xl">
-                  <MathDisplay block>{permRep.total}! / ({permRep.type1}! · {permRep.type2}! · {permRep.type3}!) = {!isNaN(packingSeq) ? Math.round(packingSeq).toLocaleString() : 'Invalid'}</MathDisplay>
-                  <p className="text-center text-2xl font-bold text-white mt-2">
+                  <MathDisplay block>{permRep.total}! / ({permRep.type1}! · {permRep.type2}! · {permRep.type3}!)</MathDisplay>
+                  <MathDisplay block>= {!isNaN(packingSeq) ? Math.round(packingSeq).toLocaleString() : 'Invalid'}</MathDisplay>
+                  <p className="text-center text-2xl font-bold text-orange-400 mt-3">
                     {!isNaN(packingSeq) ? Math.round(packingSeq).toLocaleString() : 'Invalid'} packing sequences
                   </p>
                 </div>
@@ -316,18 +346,31 @@ export default function CLO1Page() {
               </div>
 
               <Card className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-500/30">
-                <h3 className="text-lg font-bold text-blue-400 mb-3">Basic Combination</h3>
+                <h3 className="text-lg font-bold text-blue-400 mb-3">Basic Combination Formula</h3>
                 <MathDisplay block>C(n,r) = n! / (r!(n-r)!)</MathDisplay>
-                <p className="text-sm text-gray-400 text-center mb-4">Worker team assignment</p>
-                
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <Input label="Available Workers" value={comb.workers} onChange={(v) => setComb({...comb, workers: v})} max={20} />
-                  <Input label="Workers to Assign" value={comb.assign} onChange={(v) => setComb({...comb, assign: Math.min(v, comb.workers)})} max={comb.workers} />
+                <p className="text-sm text-gray-400 text-center">Order doesn't matter - selection only</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-500/30">
+                <h3 className="text-lg font-bold text-white mb-3">Question: Worker Team Assignment</h3>
+                <p className="text-gray-300 mb-4">
+                  A warehouse manager must assign <strong>3 workers</strong> from a pool of <strong>8 available workers</strong> to operate packing stations during a shift.
+                </p>
+                <p className="text-sm text-orange-400 font-bold mb-4">
+                  How many different worker teams can be formed?
+                </p>
+
+                <div className="p-4 bg-black/40 rounded-xl mb-4">
+                  <h4 className="text-sm font-bold text-gray-300 mb-3">Solution: Adjust the values</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <Input label="Available Workers" value={comb.workers} onChange={(v) => setComb({...comb, workers: v})} max={20} />
+                    <Input label="Workers to Assign" value={comb.assign} onChange={(v) => setComb({...comb, assign: Math.min(v, comb.workers)})} max={comb.workers} />
+                  </div>
                 </div>
 
                 <div className="p-4 bg-black/40 rounded-xl">
-                  <MathDisplay block>C({comb.workers},{comb.assign}) = {Math.round(workerTeams)}</MathDisplay>
-                  <p className="text-center text-2xl font-bold text-white mt-2">{Math.round(workerTeams)} possible teams</p>
+                  <MathDisplay block>C({comb.workers},{comb.assign}) = {comb.workers}! / ({comb.assign}! × {comb.workers - comb.assign}!) = {Math.round(workerTeams)}</MathDisplay>
+                  <p className="text-center text-2xl font-bold text-orange-400 mt-3">{Math.round(workerTeams)} possible teams</p>
                 </div>
               </Card>
             </section>
@@ -335,18 +378,31 @@ export default function CLO1Page() {
             {/* 2.1.3 Combinations with Repetition */}
             <section id="comb-rep" className="scroll-mt-20 space-y-5">
               <Card className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border-cyan-500/30">
-                <h3 className="text-lg font-bold text-cyan-400 mb-3">Combinations with Repetition</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-3">Combinations with Repetition Formula</h3>
                 <MathDisplay block>C(n+r-1, r) = (n+r-1)! / (r!(n-1)!)</MathDisplay>
-                <p className="text-sm text-gray-400 text-center mb-4">Stock replenishment (items can repeat)</p>
-                
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <Input label="Product Categories" value={combRep.categories} onChange={(v) => setCombRep({...combRep, categories: v})} max={10} />
-                  <Input label="Units to Order" value={combRep.units} onChange={(v) => setCombRep({...combRep, units: v})} max={20} />
+                <p className="text-sm text-gray-400 text-center">When items can be selected multiple times</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border-cyan-500/30">
+                <h3 className="text-lg font-bold text-white mb-3">Question: Stock Replenishment</h3>
+                <p className="text-gray-300 mb-4">
+                  A warehouse needs to order <strong>10 units</strong> distributed among <strong>4 different product categories</strong> (with repetition allowed - can order multiple units of same category).
+                </p>
+                <p className="text-sm text-orange-400 font-bold mb-4">
+                  In how many ways can the 10 units be distributed across the 4 categories?
+                </p>
+
+                <div className="p-4 bg-black/40 rounded-xl mb-4">
+                  <h4 className="text-sm font-bold text-gray-300 mb-3">Solution: Adjust the values</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <Input label="Product Categories" value={combRep.categories} onChange={(v) => setCombRep({...combRep, categories: v})} max={10} />
+                    <Input label="Units to Order" value={combRep.units} onChange={(v) => setCombRep({...combRep, units: v})} max={20} />
+                  </div>
                 </div>
 
                 <div className="p-4 bg-black/40 rounded-xl">
                   <MathDisplay block>C({combRep.categories + combRep.units - 1},{combRep.units}) = {Math.round(stockWays)}</MathDisplay>
-                  <p className="text-center text-2xl font-bold text-white mt-2">{Math.round(stockWays)} distribution ways</p>
+                  <p className="text-center text-2xl font-bold text-orange-400 mt-3">{Math.round(stockWays)} distribution ways</p>
                 </div>
               </Card>
             </section>
@@ -756,10 +812,10 @@ export default function CLO1Page() {
                 You've mastered counting principles, set theory, probability fundamentals, conditional probability, Bayes' theorem, and independence testing. Time to explore random variables!
               </p>
               
-              <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-bold rounded-xl hover:shadow-xl hover:shadow-orange-500/30 transition-all">
+              <a href="/clo2" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-bold rounded-xl hover:shadow-xl hover:shadow-orange-500/30 transition-all">
                 <span>Continue to CLO 2: Random Variables</span>
                 <ChevronRight className="w-6 h-6" />
-              </button>
+              </a>
             </section>
 
           </div>
