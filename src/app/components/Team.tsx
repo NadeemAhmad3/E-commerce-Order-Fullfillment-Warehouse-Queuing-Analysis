@@ -16,6 +16,9 @@ const Team = () => {
       focus: 'M/M/c Systems, CTMC Design, SLA Optimization',
       achievements: ['Led 4-Week Warehouse Data Analysis', 'Developed Full Stochastic Framework', 'Authored Core Mathematical Models'],
       skills: ['Markov Chains', 'Queueing Theory', 'Probability', 'Python', 'LaTeX'],
+      github: 'https://github.com/NadeemAhmad3',
+      linkedin: '#',
+      email: 'nadeemahmad2703@gmail.com'
     },
     {
       name: 'Iman Fatima',
@@ -25,6 +28,9 @@ const Team = () => {
       focus: 'PMF/PDF Analysis, Moment Calculations, Distribution Fitting',
       achievements: ['CLO 2 & 3 Lead Author', 'Identified Key Distributions', 'Built SLA Compliance Models'],
       skills: ['Statistical Modeling', 'Hypothesis Testing', 'R', 'Data Visualization'],
+      github: 'https://github.com/ImanFatima3715',
+      linkedin: '#',
+      email: 'f223715@cfd.nu.edu.pk'
     },
     {
       name: 'Bisam Ahmad',
@@ -34,6 +40,9 @@ const Team = () => {
       focus: 'ACF Analysis, Shift Patterns, Order Rate Modeling',
       achievements: ['Discovered Night Shift Delay Root Cause', 'CLO 4 Framework Designer', 'Peak Hour Prediction Models'],
       skills: ['Time Series Analysis', 'ACF/PACF', 'Seasonality', 'Python Pandas'],
+      github: 'https://github.com/Bisam-27',
+      linkedin: '#',
+      email: 'f223623@cfd.nu.edu.pk'
     },
     {
       name: 'Hamdan Ahmad',
@@ -43,6 +52,9 @@ const Team = () => {
       focus: 'Inclusion-Exclusion, Bayes’ Theorem, Event Probability',
       achievements: ['CLO 1 Lead Developer', 'Applied Bayes to Shift Diagnostics', 'Independence Testing Framework'],
       skills: ['Combinatorics', 'Set Theory', 'Conditional Probability', 'Mathematical Proofs'],
+      github: 'https://github.com/HamdanxSE',
+      linkedin: '#',
+      email: 'f223678@cfd.nu.edu.pk'
     },
     {
       name: 'Ayesha Naseer',
@@ -52,12 +64,15 @@ const Team = () => {
       focus: '28-Day Data Pipeline, Performance Metrics, Final Report Design',
       achievements: ['Built Complete Data Collection Framework', '5,600+ Orders Processed', 'Designed Interactive Report Structure'],
       skills: ['Data Engineering', 'SQL', 'Visualization', 'Report Automation'],
+      github: 'https://github.com/Ayesha-Naseer13',
+      linkedin: '#',
+      email: 'f223672@cfd.nu.edu.pk'
     },
   ];
 
   return (
     <section id="team" className="relative py-28 bg-gradient-to-b from-[#0a1929] via-[#0d2137] to-[#0a1929] overflow-hidden">
-      {/* Matching Animated Background Blobs */}
+      {/* Animated Background Blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-32 right-20 w-80 h-80 bg-orange-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -100,7 +115,7 @@ const Team = () => {
                 onMouseEnter={() => setHoveredMember(index)}
                 onMouseLeave={() => setHoveredMember(null)}
               >
-                {/* Subtle Gradient Glow on Hover */}
+                {/* Hover Glow */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                 {/* Avatar */}
@@ -109,7 +124,6 @@ const Team = () => {
                     <div className="w-full h-full bg-[#0a1929] rounded-3xl flex items-center justify-center border-2 border-orange-500/50">
                       <span className="text-3xl font-bold text-white">{member.initials}</span>
                     </div>
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500 to-transparent opacity-30 blur-xl"></div>
                   </div>
 
                   <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
@@ -120,7 +134,7 @@ const Team = () => {
                   </div>
                 </div>
 
-                {/* Focus Area */}
+                {/* Focus */}
                 <div className="text-center mb-6">
                   <p className="text-sm text-gray-400 leading-relaxed italic">"{member.focus}"</p>
                 </div>
@@ -135,8 +149,8 @@ const Team = () => {
                   ))}
                 </div>
 
-                {/* Skills Tags */}
-                <div className="flex flex-wrap gap-2 justify-center">
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2 justify-center mb-6">
                   {member.skills.map((skill, i) => (
                     <span 
                       key={i}
@@ -147,15 +161,26 @@ const Team = () => {
                   ))}
                 </div>
 
-                {/* Social Links */}
-                <div className="flex justify-center gap-4 mt-8 pt-6 border-t border-white/10">
-                  <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group">
+                {/* Social Links - Real URLs */}
+                <div className="flex justify-center gap-4 pt-6 border-t border-white/10">
+                  <a 
+                    href={member.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group"
+                  >
                     <Github className="w-5 h-5 text-gray-400 group-hover:text-orange-400 transition-colors" />
                   </a>
-                  <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group">
+                  <a 
+                    href={member.linkedin} 
+                    className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group"
+                  >
                     <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-orange-400 transition-colors" />
                   </a>
-                  <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group">
+                  <a 
+                    href={`mailto:${member.email}`}
+                    className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/10 hover:border-orange-500/40 transition-all group"
+                  >
                     <Mail className="w-5 h-5 text-gray-400 group-hover:text-orange-400 transition-colors" />
                   </a>
                 </div>
@@ -164,7 +189,7 @@ const Team = () => {
           })}
         </div>
 
-        {/* Final Note / CTA */}
+        {/* Final CTA */}
         <div className="text-center">
           <div className="inline-block p-10 bg-gradient-to-br from-orange-500/10 to-orange-600/5 border border-orange-500/30 rounded-3xl backdrop-blur-xl">
             <h3 className="text-3xl font-bold text-white mb-4">
