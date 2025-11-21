@@ -116,10 +116,10 @@ const Footer = () => {
             Built with passion by Nadeem Ahmad, Iman Fatima, Bisam Ahmad, Hamdan Ahmad & Ayesha Naseer
           </p>
           <div className="flex items-center gap-6">
-            <a href="https://github.com/NadeemAhmad3/StochFlow" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-400 transition-colors">
+            <a href="https://github.com/NadeemAhmad3/E-commerce-Order-Fullfillment-Warehouse-Queuing-Analysis" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-400 transition-colors">
               <Github className="w-5 h-5" />
             </a>
-            <a href="mailto:team@stochflow.dev" className="text-gray-500 hover:text-orange-400 transition-colors">
+            <a href="mailto:team@nadeemahmad2703@gmail.com" className="text-gray-500 hover:text-orange-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
