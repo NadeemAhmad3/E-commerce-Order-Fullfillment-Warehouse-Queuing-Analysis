@@ -479,9 +479,9 @@ For questions, collaborations, or feedback:
 - **Team GitHub Profiles:** See [/team](http://localhost:3000/#team) section
 
 ### Web
-- **Live Application:** [StochFlow](http://localhost:3000)
-- **Contact Form:** [/contact](http://localhost:3000/#contact)
-- **Team Profiles:** [/team](http://localhost:3000/#team)
+- **Live Application:** [StochFlow](https://e-commerce-order-fullfillment-wareh.vercel.app/)
+- **Contact Form:** [/contact](https://e-commerce-order-fullfillment-wareh.vercel.app/#contact)
+- **Team Profiles:** [/team](https://e-commerce-order-fullfillment-wareh.vercel.app/#team)
 
 ---
 
