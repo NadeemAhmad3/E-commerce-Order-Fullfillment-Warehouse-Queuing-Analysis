@@ -24,7 +24,7 @@ const Team = () => {
       name: 'Bisam Ahmad',
       role: 'Probability & Distribution Specialist',
       specialty: 'Random Variables & Statistical Inference',
-      initials: 'IF',
+      initials: 'BA',
       focus: 'PMF/PDF Analysis, Moment Calculations, Distribution Fitting',
       achievements: ['CLO 2 & 3 Lead Author', 'Identified Key Distributions', 'Built SLA Compliance Models'],
       skills: ['Statistical Modeling', 'Hypothesis Testing', 'R', 'Data Visualization'],
@@ -36,7 +36,7 @@ const Team = () => {
       name: 'Iman Fatima',
       role: 'Time Series & Autocorrelation Analyst',
       specialty: 'Seasonality Detection & Forecasting',
-      initials: 'BA',
+      initials: 'IF',
       focus: 'ACF Analysis, Shift Patterns, Order Rate Modeling',
       achievements: ['Discovered Night Shift Delay Root Cause', 'CLO 4 Framework Designer', 'Peak Hour Prediction Models'],
       skills: ['Time Series Analysis', 'ACF/PACF', 'Seasonality', 'Python Pandas'],
@@ -214,3 +214,4 @@ const Team = () => {
 };
 
 export default Team;
+
