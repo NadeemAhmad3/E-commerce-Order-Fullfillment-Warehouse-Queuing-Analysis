@@ -22,6 +22,25 @@ StochFlow is an interactive educational and research platform that demonstrates 
 - **Interactive Tools** for probability calculations and queue simulations
 
 ---
+## Docker Execution Steps
+
+### 1. Build Docker Image
+docker build -t stochflow-app .
+
+### 2. Run Docker Container
+docker run -p 8000:8000 stochflow-app
+
+## SonarQube Analysis Steps
+
+### 1. Start SonarQube using Docker
+docker run -d --name sonarqube -p 9000:9000 sonarqube
+
+### 2. Generate Token from SonarQube Dashboard
+Login → My Account → Security → Generate Token
+
+### 3. Run Sonar Scanner
+docker run --rm -e SONAR_HOST_URL="http://host.docker.internal:9000" -v "${PWD}:/usr/src" sonarsource/sonar-scanner-cli "-Dsonar.projectKey=stochflow" "-Dsonar.sources=." "-Dsonar.login=YOUR_TOKEN"
+
 
 ## 🏗️ Project Structure
 
@@ -48,6 +67,7 @@ stoch/
 │   └── react-katex.d.ts          # TypeScript definitions for KaTeX
 ├── public/                       # Static assets
 ├── package.json                  # Dependencies & scripts
+├── Dockerfile
 ├── tsconfig.json                 # TypeScript configuration
 ├── next.config.ts                # Next.js configuration
 ├── tailwind.config.ts            # Tailwind CSS configuration
